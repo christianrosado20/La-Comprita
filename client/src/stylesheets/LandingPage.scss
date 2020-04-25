@@ -1,27 +1,46 @@
 .LandingPage__container {
     padding: 1.5rem;
+    background-color: #faf5e4;
+    height: 100vh;
 
+    .LandingPage__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .LandingPage__instrucciones{
+        text-align: center;
+    }
     .LandingPage__inputBox {
         display: flex;
         justify-content: space-between;
 
+
         select {
             border: none;
-            border-bottom: 1px solid #000;
-            border-radius: 0;
+            padding: 0.4rem;
+            border-radius: 6px;
             font-size: 1rem;
-            margin-left: 1rem;
+            min-width: 10rem;
+            box-shadow: 3px 3px 3px #7a7a7a;
         }
     }
     
 
+
     input[type=submit] {
+        
         margin-top: 1rem;
         padding: 0.5rem 1rem;
-        background-color: #3F51B5;
+        background-color: #004445;
         border: none;
-        border-radius: 5px;
+        border-radius: 8px;
         color: #fff;
-        width: 100%;
+        min-width: 6rem;
+        font-size: 1rem;
+        box-shadow: 3px 3px 6px #7a7a7a ;
     }
 }
