@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import '../stylesheets/ResultPage.scss';
+import {
+    BrowserRouter as Router,
+    useParams
+  } from "react-router-dom";
 
 class ResultPage extends Component {
     constructor(props) {
@@ -45,6 +49,10 @@ class ResultPage extends Component {
       }
 
     render() {
+        let { store, article, location } = useParams();
+        console.log(store);
+        console.log(article);
+        console.log(location);
         return (
             <div className="ResultPage__container">
                 <div className="ResultPage__Title">
@@ -66,6 +74,7 @@ class ResultPage extends Component {
             </div>
         )
     }
+    
 }
     
 

@@ -19,7 +19,7 @@ class App extends Component {
           <Header></Header>
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            <Route exact path="/Resultado" component={ResultPage} />
+            <Route exact path="/Resultado/:store/:article/:location" component={ResultPage} />
           </Switch>
         </div>
       </Router>

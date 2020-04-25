@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../stylesheets/LandingPage.scss';
+import {Link} from "react-router-dom";
 
 class LandingPage extends Component {
     constructor(props) {
@@ -29,28 +30,30 @@ class LandingPage extends Component {
             <div className="LandingPage__container">
                 <div className="LandingPage__instrucciones">
                     <h2>Bienvenidos a La Comprita</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum dictum risus, quis aliquet lectus vehicula vel. Cras ornare rutrum consectetur</p>
+                    <p>Esta aplicación está diseñada para que el usuario pueda saber si los productos están accesibles en las tiendas más cercana.</p>
+                    <p>Las personas al día hacen filas masivas, teniendo un riesgo a la infección del COVID-19, no saben si los productos que buscan están en la tienda o no. Y es para prevenir la duda de si los productos estas disponibles.</p>
                 </div>
-                <hr></hr>
+                <hr className="new2"></hr>
                 <form className="LandingPage__form">
                     {/* Categoria de Tienda */}
                     <div className="LandingPage__inputBox">
                         <label> Tipo de tienda</label>
-                        <br></br>
+                        <br/>
                         <select id="store" value={this.state.store} onChange={this.handleChange}>
-                            <option  value="ANY">Cualquiera</option>
+                            <option value="ANY">Cualquiera</option>
                             <option value="SUPERMERCADO">Supermercado</option>
                             <option value="FARMACIA">Farmacia</option>
                             <option value="COLMADO">Colmado</option>
                         </select>
+                        
                     </div>
                     
                     <br></br>
 
                     {/* Categoria de Tienda */}
                     <div className="LandingPage__inputBox"> 
-                        <label>Tipo de Artículo</label>
-                        <br></br>
+                        <span>Tipo de Artículo</span>
+                        <br/>
                         <select id="article" value={this.state.article} onChange={this.handleChange}>
                             <option value="ANY">Cualquiera</option>
                             <option value="Limpieza">Limpieza</option>
@@ -63,8 +66,8 @@ class LandingPage extends Component {
 
                     {/* Categoria de Tienda */}
                     <div className="LandingPage__inputBox">
-                        <label>Pueblo</label>
-                        <br></br>
+                        <span>Pueblo</span>
+                        <br/>
                         <select id="location" value={this.state.location} onChange={this.handleChange}>
                             <option value="ANY">Cualquiera</option>
                             <option value="SANJUAN">San Juan</option>
@@ -74,9 +77,8 @@ class LandingPage extends Component {
                         </select>
                         
                     </div>
-
                     <br></br>
-                    <input type="submit" value="Buscar" />
+                    <Link className="submit" to="/Resultado/SUPERMERCADO/Limpieza/SANJUAN">Buscar</Link>
                 </form>
             </div>
         )
