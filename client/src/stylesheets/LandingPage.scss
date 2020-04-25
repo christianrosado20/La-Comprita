@@ -1,0 +1,27 @@
+.LandingPage__container {
+    padding: 1.5rem;
+
+    .LandingPage__inputBox {
+        display: flex;
+        justify-content: space-between;
+
+        select {
+            border: none;
+            border-bottom: 1px solid #000;
+            border-radius: 0;
+            font-size: 1rem;
+            margin-left: 1rem;
+        }
+    }
+    
+
+    input[type=submit] {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #3F51B5;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        width: 100%;
+    }
+}
