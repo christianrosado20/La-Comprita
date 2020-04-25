@@ -35,46 +35,44 @@ class LandingPage extends Component {
                 <form className="LandingPage__form">
                     {/* Categoria de Tienda */}
                     <div className="LandingPage__inputBox">
-                        <label>
-                            <select id="store" value={this.state.store} onChange={this.handleChange}>
-                                <option selected value="TYPE">Tipo de tienda</option>
-                                <option  value="ANY">Cualquiera</option>
-                                <option value="SUPERMERCADO">Supermercado</option>
-                                <option value="FARMACIA">Farmacia</option>
-                                <option value="COLMADO">Colmado</option>
-                            </select>
-                        </label>
+                        <label> Tipo de tienda</label>
+                        <br></br>
+                        <select id="store" value={this.state.store} onChange={this.handleChange}>
+                            <option  value="ANY">Cualquiera</option>
+                            <option value="SUPERMERCADO">Supermercado</option>
+                            <option value="FARMACIA">Farmacia</option>
+                            <option value="COLMADO">Colmado</option>
+                        </select>
                     </div>
                     
                     <br></br>
 
                     {/* Categoria de Tienda */}
                     <div className="LandingPage__inputBox"> 
-                        <label>
-                            <select id="article" value={this.state.article} onChange={this.handleChange}>
-                                <option selected value="TYPEARTICLE">Tipo de artículo</option>
-                                <option value="ANY">Cualquiera</option>
-                                <option value="Limpieza">Limpieza</option>
-                                <option value="Alimentos">Alimentos</option>
-                                <option value="Medicamentos">Medicamentos</option>
-                            </select>
-                        </label>
+                        <label>Tipo de Artículo</label>
+                        <br></br>
+                        <select id="article" value={this.state.article} onChange={this.handleChange}>
+                            <option value="ANY">Cualquiera</option>
+                            <option value="Limpieza">Limpieza</option>
+                            <option value="Alimentos">Alimentos</option>
+                            <option value="Medicamentos">Medicamentos</option>
+                        </select>
                     </div>
                     
                     <br></br>
 
                     {/* Categoria de Tienda */}
                     <div className="LandingPage__inputBox">
-                        <label>
-                            <select id="location" value={this.state.location} onChange={this.handleChange}>
-                                <option selected value="CITY">Pueblo</option>
-                                <option value="ANY">Cualquiera</option>
-                                <option value="SANJUAN">San Juan</option>
-                                <option value="MAYAGÜEZ">Mayagüez</option>
-                                <option value="PONCE">Ponce</option>
-                                <option value="DORADO">Dorado</option>
-                            </select>
-                        </label>
+                        <label>Pueblo</label>
+                        <br></br>
+                        <select id="location" value={this.state.location} onChange={this.handleChange}>
+                            <option value="ANY">Cualquiera</option>
+                            <option value="SANJUAN">San Juan</option>
+                            <option value="MAYAGÜEZ">Mayagüez</option>
+                            <option value="PONCE">Ponce</option>
+                            <option value="DORADO">Dorado</option>
+                        </select>
+                        
                     </div>
 
                     <br></br>
