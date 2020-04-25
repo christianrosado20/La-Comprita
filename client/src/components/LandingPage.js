@@ -36,9 +36,9 @@ class LandingPage extends Component {
                     {/* Categoria de Tienda */}
                     <div className="LandingPage__inputBox">
                         <label>
-                            Categoría de tienda:
                             <select id="store" value={this.state.store} onChange={this.handleChange}>
-                                <option selected value="ANY">Cualquiera</option>
+                                <option selected value="TYPE">Tipo de tienda</option>
+                                <option  value="ANY">Cualquiera</option>
                                 <option value="SUPERMERCADO">Supermercado</option>
                                 <option value="FARMACIA">Farmacia</option>
                                 <option value="COLMADO">Colmado</option>
@@ -51,9 +51,9 @@ class LandingPage extends Component {
                     {/* Categoria de Tienda */}
                     <div className="LandingPage__inputBox"> 
                         <label>
-                            Categoría de Articulos:
                             <select id="article" value={this.state.article} onChange={this.handleChange}>
-                                <option selected value="ANY">Cualquiera</option>
+                                <option selected value="TYPEARTICLE">Tipo de artículo</option>
+                                <option value="ANY">Cualquiera</option>
                                 <option value="Limpieza">Limpieza</option>
                                 <option value="Alimentos">Alimentos</option>
                                 <option value="Medicamentos">Medicamentos</option>
@@ -66,9 +66,9 @@ class LandingPage extends Component {
                     {/* Categoria de Tienda */}
                     <div className="LandingPage__inputBox">
                         <label>
-                            Pueblo:
                             <select id="location" value={this.state.location} onChange={this.handleChange}>
-                                <option selected value="ANY">Cualquiera</option>
+                                <option selected value="CITY">Pueblo</option>
+                                <option value="ANY">Cualquiera</option>
                                 <option value="SANJUAN">San Juan</option>
                                 <option value="MAYAGÜEZ">Mayagüez</option>
                                 <option value="PONCE">Ponce</option>
@@ -78,7 +78,7 @@ class LandingPage extends Component {
                     </div>
 
                     <br></br>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Buscar" />
                 </form>
             </div>
         )
