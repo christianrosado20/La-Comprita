@@ -7,6 +7,7 @@ export default class ItemList extends React.Component{
         super(props);
         this.state = {
             items: [],
+            stores: [],
     
         }
     }
@@ -17,15 +18,20 @@ export default class ItemList extends React.Component{
             console.log(res);
             this.setState({ items: res.data});
         });
+
     }
 
     getData(){
-        const userType = this.props.data;
+        const userType = this.props.dataType;
+        const userStore = this.props.dataStore;
+        const userLocation = this.props.dataLocation;
+
+        console.log("userstore", userStore);
         return(
             <div>
                 {
                     this.state.items.map(item =>{
-                        if(item.type == userType) {
+                        if(item.type == userType && item.storeType == userStore && item.municipality == userLocation) {
                             return (
                                 <Product item={item} />
                             )

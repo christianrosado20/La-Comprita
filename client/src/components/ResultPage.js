@@ -32,7 +32,9 @@ class ResultPage extends Component {
       }
 
     render() {
-        const location = this.props.location.userType;
+        const type = this.props.location.userType;
+        const store = this.props.location.userStore;
+        const location = this.props.location.userLocation;
         return (
             <div className="ResultPage__container">
                 <div className="ResultPage__Title">
@@ -41,7 +43,7 @@ class ResultPage extends Component {
                 </div>
 
                <div>
-                   <ItemsList data={location}/>
+                   <ItemsList dataLocation={location} dataStore={store} dataType={type} />
                 </div>
 
             </div>
