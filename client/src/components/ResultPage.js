@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../stylesheets/ResultPage.scss';
-
+import ItemsList from './ItemList';
 class ResultPage extends Component {
     constructor(props) {
         super(props);
@@ -8,32 +8,14 @@ class ResultPage extends Component {
             store: '',
             article: '',
             location: '',
-            product: [
-                {
-                    Name:'Brocoli',
-                    City:'Aguada',
-                    Price:'3',
-
-                },
-                {
-                    Name:'Tomate',
-                    City:'Ponce',
-                    Price:'5',
-
-                },
-                {
-                    Name:'Zanahoria',
-                    City:'San Juan',
-                    Price:'2',
-
-                }
-            ]
+            product: [],
 
         };
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
+
     
       handleChange(event) {
         this.setState({[event.target.id]: event.target.value});
@@ -51,18 +33,7 @@ class ResultPage extends Component {
                     <h2>PRODUCTOS</h2>
                     <hr className="new2"></hr>
                 </div>
-                <div>
-                {this.state.product.map((product, index) => (
-                    <div key={index}>
-                        <h3>{product.Name}</h3>
-                        <h3>{product.City}</h3>
-                        <h3>{product.Price}</h3>
-                    </div>
-
-                ))
-
-                }
-                </div>
+               <div><ItemsList/></div>
             </div>
         )
     }
