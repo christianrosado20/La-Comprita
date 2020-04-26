@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import Product from './Product';
 
 export default class ItemList extends React.Component{
     state = {
@@ -8,7 +9,7 @@ export default class ItemList extends React.Component{
     }
 
     componentDidMount(){
-        Axios.get('/api/items/').then(res => {
+        Axios.get('http://localhost:4000/api/items').then(res => {
             console.log(res);
             this.setState({ items: res.data});
         });
@@ -16,24 +17,19 @@ export default class ItemList extends React.Component{
 
     getData(){
         return(
-            <ul>
-                {this.state.items.map(item =>{
-                    if(item.inventory > 110){
-                        return (<div>
-                         <p>{item.name}</p>
-                         <p>inventory: {item.inventory}</p>
-                         <p>{item.price}</p>
-                         <p>{item.storeID}</p>
-                     </div>)
-                    }
-                })
+            <div>
+                {
+                    this.state.items.map(item =>{
+                        return (
+                            <Product item={item} />
+                        )
+                    })
                 }
-            </ul>
+            </div>
         )
     }
 
     render(){
-        console.log(this.state.items)
         return this.getData();
     }
 

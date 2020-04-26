@@ -5,23 +5,21 @@ import '../stylesheets/Product.scss';
 
 class Product extends Component {
   render() {
-    //   var data=this.props.product;
-    //   var value=this.props.location;
+      var data = this.props.item;
     return (
-        <React.Fragment>
-        <div className='Product_Box'> 
+        <div className='Product__Box'> 
             {/* Image */}
-            <div className='picture1'> 
-                {/* <img> </img> */}
+            <div className='picture'> 
+                <img src={data.image} />
             </div>
             {/* Information */}
-            <div> 
-                {/*<h3>{data.Name}</h3>
-                 <h4>{data.City}</h4>
-                <h5>{data.Price}</h5> */}
+            <div className="Product__information"> 
+                 <h3>{data.name}</h3>
+                  <h5>$ {(data.price / 100).toFixed(2)}</h5>
+                 <p>{data.description}</p>
+                
             </div>
         </div>
-        </React.Fragment>
     )
   }
 
