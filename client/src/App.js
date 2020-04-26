@@ -25,12 +25,10 @@ class App extends Component {
         
           <Switch>
             <Route exact path="/" component={LandingPage} />
+            <Route exact path="/Resultado/:store/:article/:location" component={ResultPage} />
             <Route exact path="/Resultado" component={ResultPage} />
-
             <Route exact path="/admin/dashboard" component={Dashboard} />
-
             <Route exact path="/itemList" component={ItemList} />
-
           </Switch>
         </div>
       </Router>
