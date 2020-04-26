@@ -3,10 +3,14 @@ import Axios from 'axios';
 import Product from './Product';
 
 export default class ItemList extends React.Component{
-    state = {
-        items: [],
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: [],
+    
+        }
     }
+    
 
     componentDidMount(){
         Axios.get('http://localhost:4000/api/items').then(res => {
@@ -16,13 +20,20 @@ export default class ItemList extends React.Component{
     }
 
     getData(){
+        const userType = this.props.data;
+        console.log(this.props);
         return(
             <div>
                 {
                     this.state.items.map(item =>{
-                        return (
-                            <Product item={item} />
-                        )
+                        if(item.type == userType) {
+                            return (
+                                <Product item={item} />
+                            )
+                        } else {
+                            return (<Product item={item} />)
+                        }
+                        
                     })
                 }
             </div>

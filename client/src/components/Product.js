@@ -4,6 +4,7 @@ import '../stylesheets/Product.scss';
 // Components
 
 class Product extends Component {
+
   render() {
       var data = this.props.item;
     return (
@@ -17,6 +18,7 @@ class Product extends Component {
                  <h3>{data.name}</h3>
                   <h5>$ {(data.price / 100).toFixed(2)}</h5>
                  <p>{data.description}</p>
+                 <p>Inventory: {(data.inventory) >= 100 ? 'HIGH' : 'LOW'}</p>
                 
             </div>
         </div>

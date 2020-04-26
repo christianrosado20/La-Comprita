@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import '../stylesheets/ResultPage.scss';
-import ItemsList from './ItemList';
-import Axios from 'axios';
+import {
+    BrowserRouter as Router,
+    useParams
+  } from "react-router-dom";
 
+import ItemsList from './ItemList';
 class ResultPage extends Component {
     constructor(props) {
         super(props);
@@ -10,13 +13,14 @@ class ResultPage extends Component {
             store: '',
             article: '',
             location: '',
-            items: []
+            product: [],
 
         };
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
+
     
       handleChange(event) {
         this.setState({[event.target.id]: event.target.value});
@@ -28,10 +32,8 @@ class ResultPage extends Component {
       }
 
     render() {
-        console.log("Holi");
-        console.log(this.props.location);
+        const location = this.props.location.userType;
         return (
-            return (
             <div className="ResultPage__container">
                 <div className="ResultPage__Title">
                     <h2>PRODUCTOS</h2>
@@ -39,7 +41,7 @@ class ResultPage extends Component {
                 </div>
 
                <div>
-                  <ItemsList/>
+                   <ItemsList data={location}/>
                 </div>
 
             </div>
