@@ -6,9 +6,9 @@ class LandingPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            store: '',
-            article: '',
-            location: ''
+            store: 'ANY',
+            article: 'ANY',
+            location: 'ANY'
 
         };
     
@@ -83,7 +83,7 @@ class LandingPage extends Component {
                                 userLocation: this.state.location,
                                 userStore: this.state.store
                                 }}>
-                        <button type="submit">Buscar</button>
+                        <button className="btn" type="submit">Buscar</button>
                     </Link>
                 </form>
             </div>

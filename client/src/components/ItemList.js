@@ -21,7 +21,6 @@ export default class ItemList extends React.Component{
 
     getData(){
         const userType = this.props.data;
-        console.log(this.props);
         return(
             <div>
                 {
@@ -30,7 +29,9 @@ export default class ItemList extends React.Component{
                             return (
                                 <Product item={item} />
                             )
-                        } else {
+                        }
+                        
+                        else if(userType == "ANY"){
                             return (<Product item={item} />)
                         }
                         
