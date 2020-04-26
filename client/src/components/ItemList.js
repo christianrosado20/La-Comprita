@@ -31,14 +31,66 @@ export default class ItemList extends React.Component{
             <div>
                 {
                     this.state.items.map(item =>{
-                        if(item.type == userType && item.storeType == userStore && item.municipality == userLocation) {
+                        if(userLocation == "ANY" && userStore == "ANY" && userType == "ANY"){
                             return (
                                 <Product item={item} />
                             )
                         }
-                        
-                        else if(userType == "ANY"){
-                            return (<Product item={item} />)
+                        else if(item.municipality == userLocation || 
+                            item.type == userType || item.storeType == userStore){
+                                if(item.municipality == userLocation){
+                                    if(item.type == userType){
+                                        if(item.storeType == userStore){
+                                            return (
+                                                <Product item={item} />
+                                            )
+                                        }
+                                        else if(userStore == "ANY"){
+                                             return (
+                                            <Product item={item} />
+                                            )
+                                        }
+                                    }
+                                    else if(userType == "ANY"){
+                                        if(item.storeType == userStore){
+                                            return (
+                                            <Product item={item} />
+                                            )
+                                        }
+                                        else if(userStore == "ANY"){
+                                            return (
+                                           <Product item={item} />
+                                           )
+                                       }
+                                    }  
+                                }
+                                else if(userLocation == "ANY"){
+                                    if(item.type == userType){
+                                        if(item.storeType == userStore){
+                                            return (
+                                                <Product item={item} />
+                                            )
+                                        }
+                                        else if(userStore == "ANY"){
+                                             return (
+                                            <Product item={item} />
+                                            )
+                                        }
+                                    }
+                                    else if(userType == "ANY"){
+                                        if(item.storeType == userStore){
+                                            return (
+                                            <Product item={item} />
+                                            )
+                                        }
+                                        else if(userStore == "ANY"){
+                                            return (
+                                           <Product item={item} />
+                                           )
+                                       }
+                                    }  
+                                }
+
                         }
                         
                     })
