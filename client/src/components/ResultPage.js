@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import '../stylesheets/ResultPage.scss';
+
+import Product from '../components/Product.js';
 import ItemsList from './ItemList';
 class ResultPage extends Component {
     constructor(props) {
@@ -33,7 +35,22 @@ class ResultPage extends Component {
                     <h2>PRODUCTOS</h2>
                     <hr className="new2"></hr>
                 </div>
+                <div>
+                    <Product/>
+                {/* {this.state.product.map((product, index) => (
+                    <div key={index}>
+                        <h3>{product.Name}</h3>
+                        <h3>{product.City}</h3>
+                        <h3>{product.Price}</h3>
+                    </div>
+
+                ))
+
+                } */}
+                </div>
+
                <div><ItemsList/></div>
+
             </div>
         )
     }
