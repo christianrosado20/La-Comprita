@@ -14,14 +14,14 @@ class ResultPage extends Component {
             store: '',
             article: '',
             location: '',
-            product: [],
+            product: []
 
         };
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
-
+    
     
       handleChange(event) {
         this.setState({[event.target.id]: event.target.value});
@@ -33,10 +33,8 @@ class ResultPage extends Component {
       }
 
     render() {
-        let { store, article, location } = useParams();
-        console.log(store);
-        console.log(article);
-        console.log(location);
+        console.log("Holi");
+        console.log(this.props.location);
         return (
             <div className="ResultPage__container">
                 <div className="ResultPage__Title">

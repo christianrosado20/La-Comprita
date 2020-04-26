@@ -78,7 +78,11 @@ class LandingPage extends Component {
                         
                     </div>
                     <br></br>
-                    <Link className="submit" to="/Resultado/SUPERMERCADO/Limpieza/SANJUAN">Buscar</Link>
+                    <Link to={{pathname: '/Resultado',
+                                userData: { store: this.state.store, article: this.state.article, location: this.state.location}
+                                }}>
+                        <button type="submit">Buscar</button>
+                    </Link>
                 </form>
             </div>
         )
