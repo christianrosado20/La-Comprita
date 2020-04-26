@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import '../stylesheets/ResultPage.scss';
-import {
-    BrowserRouter as Router,
-    useParams
-  } from "react-router-dom";
-
 import Product from '../components/Product.js';
 import ItemsList from './ItemList';
+import Axios from 'axios';
+
 class ResultPage extends Component {
     constructor(props) {
         super(props);
@@ -14,13 +11,38 @@ class ResultPage extends Component {
             store: '',
             article: '',
             location: '',
-            product: []
+            items: []
 
         };
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
+
+      componentDidMount(){
+        Axios.get('/api/items/').then(res => {
+            console.log(res);
+            this.setState({ items: res.data});
+        });
+    }
+
+    getData(){
+        return(
+            <ul>
+                {this.state.items.map(item =>{
+                    if(item.type == this.props.location.userType){
+                        return (<div>
+                         <p>{item.name}</p>
+                         <p>inventory: {item.inventory}</p>
+                         <p>{item.price}</p>
+                         <p>{item.storeID}</p>
+                     </div>)
+                    }
+                })
+                }
+            </ul>
+        )
+    };
     
     
       handleChange(event) {
@@ -42,7 +64,7 @@ class ResultPage extends Component {
                     <hr className="new2"></hr>
                 </div>
                 <div>
-                    <Product/>
+                    {/* <Product/> */}
                 {/* {this.state.product.map((product, index) => (
                     <div key={index}>
                         <h3>{product.Name}</h3>
@@ -55,7 +77,7 @@ class ResultPage extends Component {
                 } */}
                 </div>
 
-               <div><ItemsList/></div>
+               <div>{this.getData()}</div>
 
             </div>
         )
