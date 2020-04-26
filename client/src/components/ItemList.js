@@ -14,7 +14,7 @@ export default class ItemList extends React.Component{
     
 
     componentDidMount(){
-        Axios.get('http://localhost:4000/api/items').then(res => {
+        Axios.get('https://polar-cliffs-81766.herokuapp.com/api/items').then(res => {
             console.log(res);
             this.setState({ items: res.data});
         });
