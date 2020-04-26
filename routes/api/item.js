@@ -25,11 +25,11 @@ router.get('/:name', (req, res) => {
 
 // @route   POST api/items/addItem
 // @desck   Add a new Item
-// @access  Private
+// @access  Public
 router.post('/addItem', (req, res) => {
     
     // Search if Item already exists
-    Item.findOne({ name: req.body.name, storeID: req.body.storeID })
+    Item.findOne({ name: req.body.name })
         .then(item => {
             if (item) {
                 return res.status(400).json({ item: "Item already exists"});
@@ -41,7 +41,7 @@ router.post('/addItem', (req, res) => {
                     storeID: req.body.storeID,
                     price: req.body.price, 
                     inventory: req.body.inventory,
-                    image: req.body.inventory
+                    image: req.body.image
                 });
                 newItem
                     .save()
