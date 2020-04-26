@@ -33,28 +33,11 @@ class ResultPage extends Component {
       }
 
     render() {
-        let { store, article, location } = useParams();
-        console.log(store);
-        console.log(article);
-        console.log(location);
         return (
             <div className="ResultPage__container">
                 <div className="ResultPage__Title">
                     <h2>PRODUCTOS</h2>
                     <hr className="new2"></hr>
-                </div>
-                <div>
-                    <Product/>
-                {/* {this.state.product.map((product, index) => (
-                    <div key={index}>
-                        <h3>{product.Name}</h3>
-                        <h3>{product.City}</h3>
-                        <h3>{product.Price}</h3>
-                    </div>
-
-                ))
-
-                } */}
                 </div>
 
                <div><ItemsList/></div>

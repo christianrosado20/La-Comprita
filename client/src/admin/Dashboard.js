@@ -32,7 +32,11 @@ class Dashboard extends Component {
             inventory: this.state.inventory,
             image: this.state.image
         }
-        axios.post('http://localhost:4000/api/items/addItem', newItem)
+        axios.post('http://localhost:4000/api/items/addItem', {newItem}, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            }
+            })
             .then(res => {
                 console.log(res);
                 console.log(res.data);
@@ -40,7 +44,6 @@ class Dashboard extends Component {
             .catch(err => console.log(err));
     }
     render() {
-        console.log(this.state);
         return (
             <div className="Dashboard__container">
                 <h2>Añadir Producto</h2>
