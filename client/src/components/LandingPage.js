@@ -41,9 +41,9 @@ class LandingPage extends Component {
                         <br/>
                         <select id="store" value={this.state.store} onChange={this.handleChange}>
                             <option value="ANY">Cualquiera</option>
-                            <option value="SUPERMERCADO">Supermercado</option>
-                            <option value="FARMACIA">Farmacia</option>
-                            <option value="COLMADO">Colmado</option>
+                            <option value="Supermercado">Supermercado</option>
+                            <option value="Farmacia">Farmacia</option>
+                            <option value="Colmado">Colmado</option>
                         </select>
                         
                     </div>
@@ -70,10 +70,10 @@ class LandingPage extends Component {
                         <br/>
                         <select id="location" value={this.state.location} onChange={this.handleChange}>
                             <option value="ANY">Cualquiera</option>
-                            <option value="SANJUAN">San Juan</option>
-                            <option value="MAYAGÜEZ">Mayagüez</option>
-                            <option value="PONCE">Ponce</option>
-                            <option value="DORADO">Dorado</option>
+                            <option value="San Juan">San Juan</option>
+                            <option value="Mayagüez">Mayagüez</option>
+                            <option value="Ponce">Ponce</option>
+                            <option value="Dorado">Dorado</option>
                         </select>
                         
                     </div>

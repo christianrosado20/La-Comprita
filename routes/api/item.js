@@ -41,7 +41,9 @@ router.post('/addItem', (req, res) => {
                     storeID: req.body.storeID,
                     price: req.body.price, 
                     inventory: req.body.inventory,
-                    image: req.body.image
+                    image: req.body.image,
+                    storeType: req.body.storeType,
+                    municipality: req.body.municipality
                 });
                 newItem
                     .save()
